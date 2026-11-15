@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instamart Login</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; }
+  body { background:#fff6e9; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:20px; }
+  .card {
+    background:#fff;
+    max-width:380px;
+    width:100%;
+    border-radius:14px;
+    padding:36px 28px;
+    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+    text-align:center;
+  }
+  .logo { font-size:1.7rem; font-weight:800; color:#fc8019; margin-bottom:4px; }
+  .logo span { color:#2ea94e; }
+  p.tag { font-size:13px; color:#777; margin-bottom:26px; }
+  input {
+    width:100%;
+    padding:13px 14px;
+    font-size:15px;
+    border:1px solid #e0e0e0;
+    border-radius:10px;
+    margin-bottom:14px;
+    outline:none;
+  }
+  input:focus { border-color:#fc8019; }
+  button {
+    width:100%;
+    padding:13px;
+    font-size:15px;
+    font-weight:700;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#fc8019;
+    color:#fff;
+    margin-top:6px;
+  }
+  button:hover { background:#e07015; }
+  .new-user { margin-top:22px; font-size:13px; color:#555; }
+  .new-user a { color:#fc8019; font-weight:700; text-decoration:none; }
+  footer { text-align:center; font-size:12px; color:#777; margin-top:20px; max-width:380px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="logo">Insta<span>mart</span></div>
+  <p class="tag">Groceries delivered in minutes</p>
+  <form id="loginForm">
+    <input type="text" placeholder="Mobile number" required>
+    <input type="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+  <div class="new-user">New here? <a href="https://www.swiggy.com/instamart">Sign up</a></div>
+</div>
+
+<footer>Static UI clone built for front-end practice. No data is collected or stored — submitting forwards you to the real Instamart.</footer>
+
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    window.location.href = "https://www.swiggy.com/instamart";
+  });
+</script>
+
+</body>
+</html>

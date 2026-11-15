@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phishing Awareness Lab</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family: -apple-system, Helvetica, Arial, sans-serif; }
+  body { background:#f5f7fa; color:#1c1e21; }
+  header {
+    background:#1a2b4c; color:#fff; padding:40px 30px; text-align:center;
+  }
+  header h1 { font-size:2rem; margin-bottom:10px; }
+  header p { color:#cbd5e1; max-width:600px; margin:0 auto; }
+  .container { max-width:850px; margin:40px auto; padding:0 20px; }
+  .card {
+    background:#fff; border-radius:10px; padding:24px 28px;
+    margin-bottom:20px; box-shadow:0 1px 4px rgba(0,0,0,0.08);
+  }
+  .card h2 { font-size:1.2rem; margin-bottom:12px; color:#1a2b4c; }
+  .flag-list { list-style:none; }
+  .flag-list li {
+    padding:10px 0 10px 32px; position:relative; font-size:14px; line-height:1.5;
+    border-bottom:1px solid #eee;
+  }
+  .flag-list li:last-child { border-bottom:none; }
+  .flag-list li::before { content:"🚩"; position:absolute; left:0; }
+  .example-box {
+    border:2px dashed #e76f51; border-radius:8px; padding:16px; background:#fff8f6;
+    font-size:14px; margin-top:10px;
+  }
+  .example-box .from { font-weight:700; color:#c1121f; }
+  .quiz-btn {
+    display:inline-block; margin-top:16px; background:#2563eb; color:#fff;
+    padding:10px 20px; border-radius:6px; text-decoration:none; font-size:14px; font-weight:600;
+  }
+  .quiz-btn:hover { background:#1d4ed8; }
+  footer { text-align:center; font-size:12px; color:#8a8d91; padding:30px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎣 Phishing Awareness Lab</h1>
+  <p>Learn to recognize the signs of phishing attempts before they catch you out. This is a static educational resource — no real emails are sent and no credentials are ever collected.</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Common Red Flags in Phishing Emails</h2>
+    <ul class="flag-list">
+      <li>Urgent or threatening language ("Your account will be suspended in 24 hours")</li>
+      <li>Sender address that looks almost right but isn't (e.g. support@arnazon.com)</li>
+      <li>Generic greetings ("Dear Customer") instead of your actual name</li>
+      <li>Links where the visible text doesn't match the real destination URL</li>
+      <li>Requests for passwords, OTPs, or payment details via email or SMS</li>
+      <li>Unexpected attachments, especially .zip, .exe, or macro-enabled files</li>
+      <li>Poor grammar, spelling mistakes, or inconsistent formatting</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Example Walkthrough</h2>
+    <div class="example-box">
+      <div class="from">From: security-alert@paypa1-support.com</div>
+      <div><strong>Subject:</strong> Urgent: Unusual sign-in detected</div>
+      <p style="margin-top:8px;">"We noticed a login from a new device. Click here to verify your identity within 24 hours or your account will be locked."</p>
+    </div>
+    <p style="margin-top:12px; font-size:14px; color:#555;">
+      Spot the issues: the domain uses a "1" instead of an "l", creates artificial urgency, and pushes you to click a link rather than log in directly through the official site.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>What To Do If You Spot One</h2>
+    <ul class="flag-list">
+      <li>Don't click any links or download attachments</li>
+      <li>Verify by going directly to the official website or app, not via the email link</li>
+      <li>Report it to your IT/security team or email provider's "report phishing" option</li>
+      <li>Delete the message once reported</li>
+    </ul>
+    <a href="#" class="quiz-btn">Take the Phishing Spot-Check Quiz →</a>
+  </div>
+
+</div>
+
+<footer>Educational resource for cybersecurity training. Contains no real phishing infrastructure, tracking, or data collection.</footer>
+
+</body>
+</html>

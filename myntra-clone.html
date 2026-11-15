@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myntra Login</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; }
+  body { background:#fff; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:20px; }
+  .card {
+    display:flex;
+    max-width:700px;
+    width:100%;
+    box-shadow:0 0 20px rgba(0,0,0,0.1);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .left {
+    background:linear-gradient(135deg,#ff3f6c,#ff8fab);
+    color:#fff;
+    flex:1;
+    min-width:240px;
+    padding:50px 30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+  }
+  .left h2 { font-size:1.8rem; font-weight:800; margin-bottom:10px; letter-spacing:1px; }
+  .left p { font-size:14px; opacity:0.9; }
+  .right { flex:1; min-width:260px; padding:50px 30px; }
+  h1 { font-size:1.1rem; font-weight:700; color:#282c3f; margin-bottom:24px; text-transform:uppercase; letter-spacing:0.5px; }
+  input {
+    width:100%;
+    padding:12px 4px;
+    font-size:14px;
+    border:none;
+    border-bottom:1px solid #d4d5d9;
+    margin-bottom:28px;
+    outline:none;
+  }
+  input:focus { border-bottom:2px solid #ff3f6c; }
+  button {
+    width:100%;
+    padding:13px;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:0.5px;
+    border:none;
+    border-radius:2px;
+    cursor:pointer;
+    background:#ff3f6c;
+    color:#fff;
+    text-transform:uppercase;
+  }
+  button:hover { background:#e6395f; }
+  .new-user { text-align:center; margin-top:30px; font-size:13px; color:#282c3f; }
+  .new-user a { color:#ff3f6c; font-weight:700; text-decoration:none; }
+  footer { text-align:center; font-size:12px; color:#696b79; margin-top:16px; max-width:700px; }
+  @media (max-width:550px){ .card { flex-direction:column; } }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="left">
+    <h2>MYNTRA</h2>
+    <p>India's Fashion Expert</p>
+  </div>
+  <div class="right">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <input type="text" placeholder="Email/Mobile number" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Continue</button>
+    </form>
+    <div class="new-user">Don't have an account? <a href="https://www.myntra.com">Sign Up</a></div>
+  </div>
+</div>
+
+<footer>Static UI clone built for front-end practice. No data is collected or stored — submitting forwards you to the real Myntra.</footer>
+
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    window.location.href = "https://www.myntra.com";
+  });
+</script>
+
+</body>
+</html>

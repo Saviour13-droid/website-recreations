@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gmail-style App</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; }
+  body { background:#fff; }
+  header {
+    display:flex;
+    align-items:center;
+    padding:10px 20px;
+    border-bottom:1px solid #e0e0e0;
+    gap:20px;
+  }
+  header .logo { font-size:1.4rem; color:#5f6368; font-weight:500; }
+  header .logo span:nth-child(1){color:#4285f4;} header .logo span:nth-child(2){color:#ea4335;}
+  header .logo span:nth-child(3){color:#fbbc05;} header .logo span:nth-child(4){color:#4285f4;}
+  header .logo span:nth-child(5){color:#34a853;} header .logo span:nth-child(6){color:#ea4335;}
+  .search {
+    flex:1;
+    max-width:600px;
+    background:#eaf1fb;
+    border-radius:24px;
+    padding:10px 18px;
+    font-size:14px;
+    color:#5f6368;
+  }
+  .layout { display:flex; }
+  .sidebar { width:220px; padding:16px 8px; }
+  .compose {
+    background:#c2e7ff;
+    color:#001d35;
+    border:none;
+    border-radius:16px;
+    padding:14px 24px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    margin:8px 8px 20px;
+  }
+  .compose:hover { box-shadow:0 1px 3px rgba(0,0,0,0.3); }
+  .nav-item { padding:8px 20px; border-radius:0 16px 16px 0; font-size:14px; color:#202124; cursor:pointer; margin-bottom:2px; }
+  .nav-item.active { background:#d3e3fd; font-weight:700; }
+  .nav-item:hover { background:#f1f3f4; }
+  .mail-list { flex:1; border-left:1px solid #e0e0e0; }
+  .mail-row {
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:10px 20px;
+    border-bottom:1px solid #f1f3f4;
+    cursor:pointer;
+    font-size:14px;
+  }
+  .mail-row:hover { box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60,64,67,0.3); }
+  .mail-row.unread { font-weight:700; background:#fff; }
+  .mail-row.read { font-weight:400; background:#f2f6fc; color:#5f6368;}
+  .sender { width:160px; flex-shrink:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .subject { flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .time { color:#5f6368; font-size:12px; flex-shrink:0; }
+  @media (max-width:700px){ .sidebar { width:60px; } .sidebar .compose { padding:14px; } .nav-item span.label { display:none; } .sender { width:90px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><span>G</span><span>m</span><span>a</span><span>i</span><span>l</span></div>
+  <div class="search">🔍  Search mail</div>
+</header>
+
+<div class="layout">
+  <div class="sidebar">
+    <button class="compose">✏️ Compose</button>
+    <div class="nav-item active">📥 <span class="label">Inbox</span></div>
+    <div class="nav-item">⭐ <span class="label">Starred</span></div>
+    <div class="nav-item">🕒 <span class="label">Snoozed</span></div>
+    <div class="nav-item">📤 <span class="label">Sent</span></div>
+    <div class="nav-item">📝 <span class="label">Drafts</span></div>
+  </div>
+
+  <div class="mail-list" id="mailList">
+    <div class="mail-row unread"><span class="sender">Security Team</span><span class="subject">Weekly report ready for review</span><span class="time">9:14 AM</span></div>
+    <div class="mail-row unread"><span class="sender">GitHub</span><span class="subject">[repo] New pull request opened</span><span class="time">8:02 AM</span></div>
+    <div class="mail-row read"><span class="sender">LinkedIn</span><span class="subject">You have 3 new connection requests</span><span class="time">Yesterday</span></div>
+    <div class="mail-row read"><span class="sender">Udemy</span><span class="subject">Your course certificate is ready</span><span class="time">Yesterday</span></div>
+    <div class="mail-row read"><span class="sender">Trainer</span><span class="subject">Assignment feedback - cybersecurity lab</span><span class="time">Nov 12</span></div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.mail-row').forEach(row=>{
+    row.addEventListener('click', ()=>{
+      row.classList.remove('unread');
+      row.classList.add('read');
+    });
+  });
+</script>
+
+</body>
+</html>
